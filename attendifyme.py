@@ -1,6 +1,3 @@
-""""write a new script for each lectures with their name as for tuesday its dti lecture 1 --> DTI"""
-"""You can turn this project into javascript code so u can use it on any devices """
-
 import pygame
 import face_recognition
 import cv2
@@ -120,9 +117,9 @@ class ModernAttendanceSystem:
         ]
         try:
             creds = ServiceAccountCredentials.from_json_keyfile_name(
-                'attendifyme-by-utkarshraje-d1864d7bdca4.json', scope)
+                'pathtoyourcredentials.json', scope)
             client = gspread.authorize(creds)
-            self.sheet = client.open('Attendance Sheet').sheet1
+            self.sheet = client.open('sheet_name').sheet1
             self.show_message("Connected to Google Sheets", self.COLORS['success'])
         except Exception as e:
             self.show_message(f"Google Sheets connection failed: {str(e)}", self.COLORS['error'])
